@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603172240) do
+ActiveRecord::Schema.define(:version => 20130603204458) do
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "about"
+    t.string   "political_views"
+    t.string   "religious_views"
+    t.string   "looking_for"
+    t.string   "interested_in"
+    t.text     "favorite_quotes"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "first_name",      :default => "", :null => false
+    t.string   "last_name",       :default => "", :null => false
+    t.string   "gender"
+    t.date     "birth_date"
+  end
+
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -26,13 +44,22 @@ ActiveRecord::Schema.define(:version => 20130603172240) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "first_name",             :default => "", :null => false
-    t.string   "last_name",              :default => "", :null => false
-    t.string   "gender"
-    t.date     "birth_date"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "work_places", :force => true do |t|
+    t.integer  "profile_id"
+    t.string   "name"
+    t.string   "position"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "work_places", ["profile_id"], :name => "index_work_places_on_profile_id"
 
 end

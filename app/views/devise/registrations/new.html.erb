@@ -1,17 +1,8 @@
 <h2>Sign up</h2>
 
+<% resource.build_profile %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
@@ -22,10 +13,22 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div>
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date, start_year: 1900, end_year: Time.now.year %>
-  </div>
+  <%= f.fields_for(:profile) do |profile_form| %>
+    <div>
+      <%= profile_form.label :first_name %><br>
+      <%= profile_form.text_field :first_name %>
+    </div>
+
+    <div>
+      <%= profile_form.label :last_name %><br>
+      <%= profile_form.text_field :last_name %>
+    </div>
+
+    <div>
+      <%= profile_form.label :birth_date %><br>
+      <%= profile_form.date_select :birth_date, start_year: 1900, end_year: Time.now.year %>
+    </div>
+  <% end %>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

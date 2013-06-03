@@ -1,1 +1,8 @@
 <%= render partial: 'nav' %>
+
+<div class="profile-groups">
+  <%= render partial: 'basic_info' %>
+  <%= render partial: 'work_places',
+      locals: { work_places: @user.profile.work_places } %>
+</div>
+

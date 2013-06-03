@@ -11,12 +11,13 @@ class User < ActiveRecord::Base
 
   # Stuff added by developer
   
-  attr_accessible :first_name, :last_name, :gender, :birth_date
+  attr_accessible :profile_attributes
+  has_one :profile, inverse_of: :user
+  accepts_nested_attributes_for :profile
 
-  validates :first_name, :last_name, :birth_date, presence: true
   validates :email, uniqueness: true
 
   def name
-    "#{first_name} #{last_name}"
+    profile.name
   end
 end
