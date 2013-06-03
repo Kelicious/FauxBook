@@ -1,0 +1,27 @@
+@import "bootstrap";
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+div.info {
+  div.profile-link {
+    float: left;
+  }
+
+  a {
+    img {
+      position: relative;
+      float: left;
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+}

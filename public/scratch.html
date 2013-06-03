@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FbClone</title>
+    <style>
+      #search {
+        display: inline;
+      }
+      
+      #topNav {
+        display: inline;
+        float: right;
+        margin: 0;
+      }
+
+      #topNav > li {
+        display: inline;
+      }
+
+      div.info > a > img {
+        position: relative;
+        float: left;
+      }
+
+      .clearfix:after {
+        visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <nav>
+            <input type="text" id="search" value="Search"></input>
+            <ul class="nav pull-right" id="topNav">
+              <li><a href='#'>Home</a></li>
+              <li><a href='#'>Ke Li</a></li>
+              <li><a href='#'>Sign Out</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="info clearfix">
+        <a href="http://rubyonrails.org/">
+          <img alt="Rails" src="/assets/rails.png" width="200" height="200">
+        </a>
+        <nav>
+          <ul class="nav">
+            <li><a href='#'>Wall</a></li>
+            <li><a href='#'>Info</a></li>
+            <li><a href='#'>Friends</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content">
+        Insert wall posts here
+      </div>
+    </div>
+  </body>
+</html>

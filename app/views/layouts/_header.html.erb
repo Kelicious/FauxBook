@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <input type="text" id="search" value="Search"></input>
+        <ul class="nav pull-right" id="topNav">
+          <li><%= link_to "Home", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.name, current_user %></li>
+            <li>
+              <%= link_to "Log Out", destroy_user_session_path,
+                  method: :delete %>
+            </li>
+          <% else %>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
