@@ -1,0 +1,7 @@
+<table class="friend-request-table">
+  <tbody>
+    <% friend_requests.each do |friend_request| %>
+      <%= render partial: 'friend_request', locals: {friend_request: friend_request} %>
+    <% end %>
+  </tbody>
+</table>

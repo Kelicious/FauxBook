@@ -1,0 +1,8 @@
+<tr class="friend-request">
+  <th class="friend-request-name">
+    <%= link_to friend_request.user.name, friend_request.user %>
+  </th>
+  <td class="friend-request-buttons">
+    <%= render partial: 'friend_request_buttons', locals: {friend_request: friend_request} %>
+  </td>
+</tr>
