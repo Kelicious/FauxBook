@@ -11,8 +11,12 @@
         <ul class="nav">
           <li><a href='#'>Wall</a></li>
           <li><%= link_to "Info", user_info_path(@user) %></li>
-          <li><a href='#'>Friends</a></li>
-          <%= render partial: 'friendship_button' %>
+          <li><%= link_to "Friends", user_friends_path(@user) %></li>
+          <% if current_user.id != @user.id %>
+            <li>
+              <%= render partial: 'friendship_button', locals: {user: @user} %>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </div>

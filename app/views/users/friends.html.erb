@@ -1,0 +1,7 @@
+<%= render partial: 'nav' %>
+
+<div class="friends">
+  <h2>Friends</h2>
+
+  <%= render partial: 'user_list', locals: {users: @user.friends} %>
+</div>

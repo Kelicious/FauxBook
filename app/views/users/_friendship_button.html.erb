@@ -1,19 +1,16 @@
-<% if current_user.id != @user.id %>
-  <li>
-    <% if current_user.has_friend?(@user) %>
-      <%= link_to "Remove Friend",
-          friendship_path(current_user.find_friendship(@user)),
-          method: :delete%>
+<% if current_user.id != user.id %>
+  <% if current_user.has_friend?(user) %>
+    <%= link_to "Remove Friend",
+        friendship_path(current_user.find_friendship(user)),
+        method: :delete%>
+  <% else %>
+    <% if friendship = current_user.find_friendship(user) %>
+      <%= link_to "Cancel Friend Request", friendship, method: :delete %>
+    <% elsif friendship = user.find_friendship(current_user) %>
+      <%= render partial: 'friendships/friend_request_buttons', locals: {friend_request: friendship} %>
     <% else %>
-      <% if friendship = current_user.find_friendship(@user) %>
-        <%= link_to "Cancel Friend Request", friendship, method: :delete %>
-      <% elsif friendship = @user.find_friendship(current_user) %>
-        <%= render partial: 'friendships/friend_request_buttons', locals: {friend_request: friendship} %>
-        <%#= link_to "Accept Friend Request", friendship, method: :put %>
-      <% else %>
-        <%= link_to "Add Friend",
-            user_friendships_path(@user.id), method: :post %>
-      <% end %>
+      <%= link_to "Add Friend",
+          user_friendships_path(user.id), method: :post %>
     <% end %>
-  </li>
+  <% end %>
 <% end %>

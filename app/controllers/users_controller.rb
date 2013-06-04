@@ -8,4 +8,8 @@ class UsersController < ApplicationController
   def info
     @user = User.find(params[:user_id])
   end
+
+  def friends
+    @user = User.find(params[:user_id])
+  end
 end

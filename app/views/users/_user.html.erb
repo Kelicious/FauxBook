@@ -1,0 +1,8 @@
+<div class="user-display">
+  <div class="user-display-item user-display-name">
+    <%= link_to user.name, user %>
+  </div>
+  <div class="user-display-item user-display-button">
+    <%= render partial: 'friendship_button', locals: {user: user} %>
+  </div>
+</div>

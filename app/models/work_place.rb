@@ -4,5 +4,7 @@ class WorkPlace < ActiveRecord::Base
 
   belongs_to :profile, inverse_of: :work_places
 
+  default_scope order('work_places.start_date DESC')
+
   validates :name, :profile, presence: true
 end
