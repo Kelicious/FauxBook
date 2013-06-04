@@ -1,0 +1,9 @@
+<div class="profile-group">
+  <div class="profile-group-header">
+    <h2>Favorite Quotes</h2>
+  </div>
+  <div class="profile-group-body">
+    <pre><%= @user.profile.favorite_quotes %></pre>
+  </div>
+  <%= link_to "Edit", edit_user_profile_path(@user) %>
+</div>
