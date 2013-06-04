@@ -12,6 +12,7 @@
           <li><a href='#'>Wall</a></li>
           <li><%= link_to "Info", user_info_path(@user) %></li>
           <li><a href='#'>Friends</a></li>
+          <%= render partial: 'friendship_button' %>
         </ul>
       </nav>
     </div>
