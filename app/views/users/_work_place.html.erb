@@ -6,4 +6,6 @@
     <p class="summary"><%= "#{work_place.position} from #{work_place.start_date} to #{work_place.end_date}" %></p>
     <p class="description"><%= work_place.description%></p>
   </div>
+  <%= link_to "Edit", edit_work_place_path(work_place) %>
+  <%= link_to "Delete", work_place_path(work_place), method: :delete %>
 </div>

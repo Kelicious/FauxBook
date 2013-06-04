@@ -1,0 +1,23 @@
+<%= form_for(@work_place) do |f| %>
+  <div class="form-fields">
+    <%= f.hidden_field :profile_id %>
+
+    <%= f.label :name, "Company Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :position, "Position Title" %>
+    <%= f.text_field :position %>
+
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date %>
+    
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="form-submit">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

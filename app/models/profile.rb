@@ -5,7 +5,7 @@ class Profile < ActiveRecord::Base
   attr_accessible :user_id
   
   belongs_to :user, inverse_of: :profile
-  has_many :work_places, inverse_of: :profile
+  has_many :work_places, inverse_of: :profile, dependent: :destroy
 
   validates :first_name, :last_name, :birth_date, presence: true
 

@@ -5,9 +5,12 @@ FbClone::Application.routes.draw do
 
   resources :users, only: [:show] do
     match 'info' => 'users#info'
+    resource :profile, only: [:edit]
   end
 
-  resources :profiles do
-    resources :work_places
+  resources :profiles, only: [:update] do
+    resources :work_places, only: [:new]
   end
+
+  resources :work_places, only: [:edit, :destroy, :create, :update]
 end

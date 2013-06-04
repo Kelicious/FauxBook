@@ -1,0 +1,26 @@
+<h2>Edit Profile</h2>
+
+<%= form_for(@profile) do |f| %>
+  <div class="form-fields">
+    <%= f.label :birth_date %>
+    <%= f.date_select :birth_date %>
+
+    <%= f.label :gender %>
+    <%= f.select(:gender, [["Male", "Male"], ["Female", "Female"]]) %>
+
+    <%= f.label :interested_in %>
+    <%= f.text_field :interested_in %>
+
+    <%= f.label :religious_views %>
+    <%= f.text_field :religious_views %>
+
+    <%= f.label :political_views %>
+    <%= f.text_field :political_views %>
+
+    <%= f.label :favorite_quotes %>
+    <%= f.text_area :favorite_quotes %>
+  </div>
+  <div class="form-submit">
+    <%= f.submit %>
+  </div>
+<% end %>

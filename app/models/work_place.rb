@@ -4,5 +4,5 @@ class WorkPlace < ActiveRecord::Base
 
   belongs_to :profile, inverse_of: :work_places
 
-  validates :name, presence: true
+  validates :name, :profile, presence: true
 end
