@@ -1,10 +1,13 @@
 class Friendship < ActiveRecord::Base
   attr_accessible :user_id, :friend_id
+  # also has a status: 0 for unapproved, 1 for approved
 
   belongs_to :user
   belongs_to :friend, class_name: "User"
 
   validates :user_id, :friend_id, presence: true
+
+  default_scope order('friendships.created_at DESC')
 
   def approve!
     self.status = 1

@@ -2,6 +2,9 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
+        <% if user_signed_in? %>
+          <%= render partial: 'layouts/friend_requests' %>
+        <% end %>
         <input type="text" id="search" value="Search"></input>
         <ul class="nav pull-right" id="topNav">
           <li><%= link_to "Home", root_path %></li>

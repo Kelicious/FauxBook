@@ -1,0 +1,8 @@
+<% friend_requests = current_user.pending_friend_requests %>
+<% case friend_requests.count
+   when 0 %>
+<% when 1 %>
+<%= link_to "1 Friend Request", friend_requests_path %>
+<% else %>
+  <%= link_to "#{friend_requests.count} Friend Requests", friend_requests_path %>
+<% end %>
