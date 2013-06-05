@@ -6,6 +6,7 @@ FbClone::Application.routes.draw do
   resources :users, only: [:show] do
     match 'info' => 'users#info'
     match 'friends' => 'users#friends'
+    match 'mutual_friends' => 'users#mutual_friends'
 
     resource :profile, only: [:edit]
 

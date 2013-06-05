@@ -2,6 +2,16 @@
   <div class="user-display-item user-display-name">
     <%= link_to user.name, user %>
   </div>
+  <div class="user-display-item mutual-friends-link">
+    <% num_mutual = current_user.mutual_friends(user).count %>
+    <% if current_user.id != user.id && num_mutual > 0 %>
+      <%= link_to "#{num_mutual} mutual friends",
+          user_mutual_friends_path(user) %>
+    <% else %>
+      <%= link_to "#{user.friend_ids.count} friends",
+          user_friends_path(user) %>
+    <% end %>
+  </div>
   <div class="user-display-item user-display-button">
     <%= render partial: 'friendship_button', locals: {user: user} %>
   </div>

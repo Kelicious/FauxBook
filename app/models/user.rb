@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def find_friendship(another_user)
     friendships.find_by_friend_id(another_user.id)
   end
+
+  def mutual_friends(another_user)
+    self.friends.where(id: another_user.friend_ids)
+  end
 end

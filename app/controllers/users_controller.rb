@@ -12,4 +12,8 @@ class UsersController < ApplicationController
   def friends
     @user = User.find(params[:user_id])
   end
+
+  def mutual_friends
+    @user = User.find(params[:user_id])
+  end
 end
