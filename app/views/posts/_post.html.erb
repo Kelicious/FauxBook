@@ -1,0 +1,11 @@
+<div class="post-display">
+  <div class="post-display-item post-user-name">
+    <%= link_to post.author.profile.name, post.author %>
+  </div>
+  <div class="post-display-item post-time">
+    <%= time_ago_in_words(post.created_at) %> ago
+  </div>
+  <div class="post-display-item post-body">
+    <%= post.body %>
+  </div>
+</div>

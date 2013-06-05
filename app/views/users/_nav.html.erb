@@ -9,12 +9,12 @@
     <div class="navbar">
       <nav>
         <ul class="nav">
-          <li><a href='#'>Wall</a></li>
+          <li><%= link_to "Wall", user_posts_path(@user) %></li>
           <li><%= link_to "Info", user_info_path(@user) %></li>
           <li><%= link_to "Friends", user_friends_path(@user) %></li>
           <% if current_user.id != @user.id %>
             <li>
-              <%= render partial: 'friendship_button', locals: {user: @user} %>
+              <%= render partial: 'users/friendship_button', locals: {user: @user} %>
             </li>
           <% end %>
         </ul>

@@ -1,0 +1,8 @@
+<%= render partial: 'users/nav' %>
+
+<div class="wall">
+  <h2><%= @user.name %>'s Wall</h2>
+
+  <%= render partial: 'form' %>
+  <%= render partial: 'posts', locals: {posts: @user.wall_posts} %>
+</div>

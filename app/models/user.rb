@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   has_many :pending_friend_requests, class_name: "Friendship", foreign_key: "friend_id", conditions: { status: 0 }
   has_many :pending_sent_friend_requests, class_name: "Friendship", conditions: { status: 0 }
 
+  has_many :wall_posts, class_name: "Post", inverse_of: :user
+  has_many :authored_posts, class_name: "Post", inverse_of: :author, foreign_key: "author_id"
+p
   validates :email, uniqueness: true
 
   def name
