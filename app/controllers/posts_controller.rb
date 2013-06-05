@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.authored_posts.new(params[:post])
+    post.user_id = params[:user_id]
 
     if post.save
       flash[:success] = "Post added!"
