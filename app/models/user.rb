@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
   has_many :wall_posts, class_name: "Post", inverse_of: :user
   has_many :authored_posts, class_name: "Post", inverse_of: :author, foreign_key: "author_id"
 p
+  has_many :authored_comments, class_name: "Comment", inverse_of: :author, foreign_key: "author_id"
+
   validates :email, uniqueness: true
 
   def name

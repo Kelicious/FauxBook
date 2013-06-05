@@ -8,4 +8,11 @@
   <div class="post-display-item post-body">
     <%= post.body %>
   </div>
+  <div class="comment-section">
+    <%= render partial: "comments/form", locals: {
+          commentable: post,
+          comment: Comment.new
+        } %>
+    <%= render partial: "comments/comments", locals: {comments: post.comments} %>
+  </div>
 </div>
