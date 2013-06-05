@@ -8,6 +8,7 @@
   <div class="body">
     <%= post.body %>
   </div>
+  <%= render partial: 'likes/like_button', locals: {likable: post} %>
   <div class="comment-section">
     <%= render partial: "comments/form", locals: {
           commentable: post,

@@ -8,4 +8,5 @@
   <div class="body">
     <%= comment.body %>
   </div>
+  <%= render partial: 'likes/like_button', locals: {likable: comment} %>
 </div>
