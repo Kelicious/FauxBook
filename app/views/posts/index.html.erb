@@ -3,6 +3,6 @@
 <div class="wall">
   <h2><%= @user.name %>'s Wall</h2>
 
-  <%= render partial: 'form' %>
+  <%= render partial: 'form', locals: {user: @user, post: Post.new} %>
   <%= render partial: 'posts', locals: {posts: @user.wall_posts} %>
 </div>

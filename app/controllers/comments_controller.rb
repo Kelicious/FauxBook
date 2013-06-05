@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @commentable.comments.new(params[:comment])
-    @comment.author_id = current_user.id
+    comment = @commentable.comments.new(params[:comment])
+    comment.author_id = current_user.id
 
-    if @comment.save
+    if comment.save
       flash[:success] = "Comment added!"
     else
       flash[:error] = "Invalid comment."

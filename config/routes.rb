@@ -11,7 +11,7 @@ FbClone::Application.routes.draw do
 
     resource :profile, only: [:edit]
     resources :friendships, only: [:create]
-    resources :posts, only: [:index]
+    resources :posts, only: [:create, :index]
   end
 
   resources :profiles, only: [:update] do
@@ -23,7 +23,7 @@ FbClone::Application.routes.draw do
   resources :friendships, only: [:update, :destroy]
   match 'friend_requests' => 'friendships#index'
 
-  resources :posts, only: [:create, :destroy] do
+  resources :posts, only: [:destroy] do
     resources :comments
   end
 end
