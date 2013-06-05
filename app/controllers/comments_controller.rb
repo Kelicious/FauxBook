@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
       flash[:error] = "Invalid comment."
     end
 
-    redirect_to root_url
+    redirect_to @commentable
   end
 
   private

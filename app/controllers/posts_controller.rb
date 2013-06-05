@@ -14,4 +14,9 @@ class PostsController < ApplicationController
 
     redirect_to post.user
   end
+
+  def show
+    post = Post.find(params[:id])
+    redirect_to post.user
+  end
 end
