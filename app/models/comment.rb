@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   belongs_to :author, class_name: "User", inverse_of: :authored_comments
   delegate :user, to: :commentable
 
-  has_many :likes, as: :likable
+  has_many :likes, as: :likable, dependent: :destroy
   has_many :likers, through: :likes
 
   validates :body, :author_id, presence: true

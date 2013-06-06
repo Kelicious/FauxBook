@@ -2,8 +2,8 @@ class Post < ActiveRecord::Base
   include Likable
   attr_accessible :body, :user_id, :author_id
 
-  has_many :comments, as: :commentable
-  has_many :likes, as: :likable
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :likes, as: :likable, dependent: :destroy
   has_many :likers, through: :likes
 
   belongs_to :user, inverse_of: :wall_posts

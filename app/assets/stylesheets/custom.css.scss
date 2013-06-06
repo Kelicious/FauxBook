@@ -9,19 +9,46 @@
   height: 0;
 }
 
-
-div.info {
-  div.profile-link {
-    float: left;
-  }
-
-  a {
-    img {
-      position: relative;
-      float: left;
-      width: 160px;
-      height: 160px;
+div.wall {
+  #new_post {
+    textarea {
+      width: 526px;
     }
   }
+}
 
+.posts {
+  margin: 50px auto;
+  .post {
+    width: 500px;
+    header {
+      border-bottom: 2px solid #ddd;
+      div {
+        float: left;
+      }
+      div.info {
+        padding: 0 0 0 10px;
+        h6 {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .comments {
+    margin-left: 50px;
+    .comment {
+      padding: 5px;
+      margin-bottom: 0;
+      background: #eee;
+      header {
+        height: 40px;
+      }
+    }
+  }
+  form {
+    margin-left: 50px;
+    textarea {
+      width: 436px;
+    }
+  }
 }

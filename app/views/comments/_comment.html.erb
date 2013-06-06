@@ -1,10 +1,11 @@
-<article class="comment">
+<article class="comment well">
   <header class="clearfix">
     <div class="picture">
-      <%= image_tag(@user.profile.picture.url(:thumb), size: "50x50") %>
+      <%= image_tag(comment.author.profile.picture.url(:thumb), size: "30x30") %>
     </div>
     <div class="info">
       <h6><%= link_to comment.author.name, comment.author %></h6>
+      <small><time><%= time_ago_in_words(comment.created_at) %> ago</time></small>
     </div>
   </header>
   <section class="body">
@@ -12,6 +13,5 @@
   </section>
   <footer class="clearfix">
     <%= render partial: 'likes/like_button', locals: {likable: comment} %>
-    <time><%= time_ago_in_words(comment.created_at) %> ago</time>
   </footer>
 </article>

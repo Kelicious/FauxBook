@@ -1,4 +1,8 @@
 <%= form_for [user, post] do |f| %>
-  <%= f.text_area :body, rows: 8 %>
-  <%= f.submit "Post" %>
+  <div class="fields">
+    <%= f.text_area :body, rows: 4 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
 <% end %>
