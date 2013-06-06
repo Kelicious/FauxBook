@@ -1,22 +1,20 @@
-<div class="post">
-  <div class="picture">
-    <%= image_tag @user.profile.picture.url(:thumb) %>
-  </div>
-  <div class="name">
-    <%= link_to post.author.name, post.author %>
-  </div>
-  <div class="time">
-    <%= time_ago_in_words(post.created_at) %> ago
-  </div>
-  <div class="body">
-    <%= post.body %>
-  </div>
+<article class="post">
+  <header class="clearfix">
+    <div class="picture">
+      <%= image_tag(@user.profile.picture.url(:thumb), size: "50x50") %>
+    </div>
+    <div class="info">
+      <h3><%= link_to post.author.name, post.author %></h3>
+      <time><%= time_ago_in_words(post.created_at) %> ago</time>
+    </div>
+  </header>
+  <section class="body">
+    <p><%= post.body %></p>
+  </section>
   <%= render partial: 'likes/like_button', locals: {likable: post} %>
-  <div class="comment-section">
-    <%= render partial: "comments/comments", locals: {comments: post.comments} %>
-    <%= render partial: "comments/form", locals: {
-          commentable: post,
-          comment: Comment.new
-        } %>
-  </div>
-</div>
+  <%= render partial: "comments/comments", locals: {comments: post.comments} %>
+  <%= render partial: "comments/form", locals: {
+        commentable: post,
+        comment: Comment.new
+      } %>
+</article>

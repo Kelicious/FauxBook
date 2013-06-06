@@ -1,8 +1,12 @@
-<div class="user-display">
-  <div class="user-display-item user-display-name">
+<div class="user">
+  <div class="picture">
+    <%= image_tag @user.profile.picture.url(:thumb) %>
+  </div>
+
+  <div class="name">
     <%= link_to user.name, user %>
   </div>
-  <div class="user-display-item mutual-friends-link">
+  <div class="link">
     <% num_mutual = current_user.mutual_friends(user).count %>
     <% if current_user.id != user.id && num_mutual > 0 %>
       <%= link_to "#{num_mutual} mutual friends",
@@ -12,7 +16,7 @@
           user_friends_path(user) %>
     <% end %>
   </div>
-  <div class="user-display-item user-display-button">
+  <div class="button">
     <%= render partial: 'friendship_button', locals: {user: user} %>
   </div>
 </div>
