@@ -1,22 +1,26 @@
-<div class="user">
-  <div class="picture">
-    <%= image_tag user.profile.picture.url(:thumb) %>
-  </div>
+<article class="user clearfix">
+  <section class="picture">
+    <%= image_tag user.profile.picture.url(:thumb), class: "thumb" %>
+  </section>
 
-  <div class="name">
-    <%= link_to user.name, user %>
-  </div>
-  <div class="link">
-    <% num_mutual = current_user.mutual_friends(user).count %>
-    <% if current_user.id != user.id && num_mutual > 0 %>
-      <%= link_to "#{num_mutual} mutual friends",
-          user_mutual_friends_path(user) %>
-    <% else %>
-      <%= link_to "#{user.friend_ids.count} friends",
-          user_friends_path(user) %>
-    <% end %>
-  </div>
-  <div class="button">
+  <section class="info">
+    <div class="name">
+      <%= link_to user.name, user %>
+    </div>
+    <div class="friend-count">
+      <small>
+        <% num_mutual = current_user.mutual_friends(user).count %>
+        <% if current_user.id != user.id && num_mutual > 0 %>
+          <%= link_to "#{num_mutual} mutual friends",
+              user_mutual_friends_path(user) %>
+        <% else %>
+          <%= link_to "#{user.friend_ids.count} friends",
+              user_friends_path(user) %>
+        <% end %>
+      </small>
+    </div>
+  </section>
+  <section class="button">
     <%= render partial: 'friendship_button', locals: {user: user} %>
-  </div>
-</div>
+  </section>
+</article>

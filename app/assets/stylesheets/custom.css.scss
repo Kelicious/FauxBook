@@ -1,5 +1,31 @@
 @import "bootstrap";
 
+.thumb {
+  width: 50px;
+  height: 50px;
+}
+
+div.navbar > nav > ul.nav {
+  padding: 10px 0;
+  > li > a {
+    display: inline;
+  }
+} 
+
+.friend-request > th {
+  padding: 10px;
+}
+
+img.medium {
+  width: 210px;
+  height: 210px;
+}
+
+.comment .thumb {
+  width: 40px;
+  height: 40px;
+}
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -9,8 +35,11 @@
   height: 0;
 }
 
-div.info {
+div.profile-panel {
   padding-bottom: 0;
+  div.navbar {
+    background: blue;
+  }
 }
 
 div.wall {
@@ -54,5 +83,29 @@ div.wall {
     textarea {
       width: 436px;
     }
+  }
+}
+
+table.basic-info {
+  th.info-label {
+    text-align: left;
+    padding-right: 10px;
+  }
+}
+
+section.work-places {
+  article.work-place {
+    padding: 10px 0;
+  }
+}
+
+article.user {
+  > section {
+    float: left;
+    margin: 5px 20px;
+  }
+
+  > .info > .friend-count a {
+    color: #888;
   }
 }

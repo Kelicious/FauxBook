@@ -1,7 +1,7 @@
 <article class="comment well">
   <header class="clearfix">
     <div class="picture">
-      <%= image_tag(comment.author.profile.picture.url(:thumb), size: "30x30") %>
+      <%= image_tag(comment.author.profile.picture.url(:thumb), class: "thumb") %>
     </div>
     <div class="info">
       <h6><%= link_to comment.author.name, comment.author %></h6>

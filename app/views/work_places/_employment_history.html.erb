@@ -1,0 +1,9 @@
+<div class="profile-group well">
+  <div class="profile-group-header">
+    <h2>Employment History</h2>
+  </div>
+  <div class="profile-group-body">
+    <%= link_to "Add New Place of Employment", new_profile_work_place_path(profile) %>
+    <%= render partial: 'work_places/work_places', locals: {work_places: work_places} %>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <article class="post well">
   <header class="clearfix">
     <div class="picture">
-      <%= image_tag(post.author.profile.picture.url(:thumb), size: "50x50") %>
+      <%= image_tag(post.author.profile.picture.url(:thumb), class: "thumb") %>
     </div>
     <div class="info">
       <h6><%= link_to post.author.name, post.author %></h6>

@@ -2,7 +2,7 @@
 
 <div class="profile-groups">
   <%= render partial: 'profiles/basic_info' %>
-  <%= render partial: 'work_places/work_places', locals: {
+  <%= render partial: 'work_places/employment_history', locals: {
         work_places: @user.profile.work_places,
         profile: @user.profile
       } %>

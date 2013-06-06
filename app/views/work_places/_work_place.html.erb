@@ -1,11 +1,11 @@
-<div class="work-place">
-  <div class="work-place-name">
-    <h6><%= work_place.name %></h6>
-  </div>
-  <div class="work-place-body">
+<article class="work-place">
+  <header>
+    <h4><%= work_place.name %></h4>
     <p class="summary"><%= "#{work_place.position} from #{work_place.start_date} to #{work_place.end_date}" %></p>
+  </header>
+  <section class="body">
     <p class="description"><%= work_place.description%></p>
-  </div>
+  </section>
   <%= link_to "Edit", edit_work_place_path(work_place) %>
   <%= link_to "Delete", work_place_path(work_place), method: :delete %>
-</div>
+</article>

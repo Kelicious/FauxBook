@@ -1,6 +1,6 @@
 <%= render partial: 'nav' %>
 
-<div class="friends">
+<div class="profile-group">
   <h2><%= @user.name %>'s Friends</h2>
 
   <%= render partial: 'user_list', locals: {users: @user.friends} %>
