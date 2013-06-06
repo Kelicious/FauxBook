@@ -1,6 +1,6 @@
 <h2>Edit Profile</h2>
 
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile, html: {multipart: true}) do |f| %>
   <div class="form-fields">
     <%= f.label :birth_date %>
     <%= f.date_select :birth_date %>
@@ -19,6 +19,9 @@
 
     <%= f.label :favorite_quotes %>
     <%= f.text_area :favorite_quotes %>
+
+    <%= f.label :picture, "Profile Picture" %>
+    <%= f.file_field :picture %>
   </div>
   <div class="form-submit">
     <%= f.submit %>

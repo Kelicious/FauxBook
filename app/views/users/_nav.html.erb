@@ -1,7 +1,5 @@
 <div class="info clearfix hero-unit">
-  <a href="http://rubyonrails.org/">
-    <img alt="Rails" src="/assets/rails.png">
-  </a>
+  <%= image_tag @user.profile.picture.url(:medium) %>
   <div class="navlinks">
     <div class="profile-link hero-unit">
       <%= link_to @user.name, @user %>

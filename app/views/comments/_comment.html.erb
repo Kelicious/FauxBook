@@ -1,4 +1,7 @@
 <div class="comment">
+  <div class="picture">
+    <%= image_tag @user.profile.picture.url(:thumb) %>
+  </div>
   <div class="name">
     <%= link_to comment.author.name, comment.author %>
   </div>

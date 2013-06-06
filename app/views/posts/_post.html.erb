@@ -1,4 +1,7 @@
 <div class="post">
+  <div class="picture">
+    <%= image_tag @user.profile.picture.url(:thumb) %>
+  </div>
   <div class="name">
     <%= link_to post.author.name, post.author %>
   </div>
@@ -10,10 +13,10 @@
   </div>
   <%= render partial: 'likes/like_button', locals: {likable: post} %>
   <div class="comment-section">
+    <%= render partial: "comments/comments", locals: {comments: post.comments} %>
     <%= render partial: "comments/form", locals: {
           commentable: post,
           comment: Comment.new
         } %>
-    <%= render partial: "comments/comments", locals: {comments: post.comments} %>
   </div>
 </div>
