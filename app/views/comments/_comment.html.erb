@@ -1,15 +1,17 @@
-<div class="comment">
-  <div class="picture">
-    <%= image_tag @user.profile.picture.url(:thumb) %>
-  </div>
-  <div class="name">
-    <%= link_to comment.author.name, comment.author %>
-  </div>
-  <div class="time">
-    <%= time_ago_in_words(comment.created_at) %> ago
-  </div>
-  <div class="body">
+<article class="comment">
+  <header class="clearfix">
+    <div class="picture">
+      <%= image_tag(@user.profile.picture.url(:thumb), size: "50x50") %>
+    </div>
+    <div class="info">
+      <h6><%= link_to comment.author.name, comment.author %></h6>
+    </div>
+  </header>
+  <section class="body">
     <%= comment.body %>
-  </div>
-  <%= render partial: 'likes/like_button', locals: {likable: comment} %>
-</div>
+  </section>
+  <footer class="clearfix">
+    <%= render partial: 'likes/like_button', locals: {likable: comment} %>
+    <time><%= time_ago_in_words(comment.created_at) %> ago</time>
+  </footer>
+</article>
