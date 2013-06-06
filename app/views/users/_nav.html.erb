@@ -1,22 +1,26 @@
 <div class="info clearfix hero-unit">
-  <%= image_tag @user.profile.picture.url(:medium) %>
-  <div class="navlinks">
-    <div class="profile-link hero-unit">
-      <%= link_to @user.name, @user %>
+  <div class="row">
+    <div class="span3">
+      <%= image_tag @user.profile.picture.url(:medium) %>
     </div>
-    <div class="navbar">
-      <nav>
-        <ul class="nav">
-          <li><%= link_to "Wall", user_posts_path(@user) %></li>
-          <li><%= link_to "Info", user_info_path(@user) %></li>
-          <li><%= link_to "Friends", user_friends_path(@user) %></li>
-          <% if current_user.id != @user.id %>
-            <li>
-              <%= render partial: 'users/friendship_button', locals: {user: @user} %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+    <div class="navlinks span6">
+      <div class="profile-link">
+        <h3><%= link_to @user.name, @user %></h3>
+      </div>
     </div>
+  </div>
+  <div class="navbar">
+    <nav>
+      <ul class="nav">
+        <li><%= link_to "Wall", user_posts_path(@user) %></li>
+        <li><%= link_to "Info", user_info_path(@user) %></li>
+        <li><%= link_to "Friends", user_friends_path(@user) %></li>
+        <% if current_user.id != @user.id %>
+          <li>
+            <%= render partial: 'users/friendship_button', locals: {user: @user} %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
 </div>
