@@ -1,7 +1,9 @@
 <h2>All Conversations</h2>
 
 <% if @conversations.length > 0 %>
-  <%= render @conversations %>
+  <section class="conversations">
+    <%= render @conversations %>
+  </section>
 <% else %>
   No conversations found
 <% end %>

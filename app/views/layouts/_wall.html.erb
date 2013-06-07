@@ -1,0 +1,9 @@
+<% num_unread = current_user.unread_posts_count %>
+<% case num_unread
+   when 0 %>
+<%= link_to "Wall", user_posts_path(current_user) %>
+<% when 1 %>
+<%= link_to "1 Unread Wall Post", user_posts_path(current_user) %>
+<% else %>
+<%= link_to "#{num_unread} Unread Wall Posts", user_posts_path(current_user) %>
+<% end %>

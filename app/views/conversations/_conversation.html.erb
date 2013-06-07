@@ -21,6 +21,10 @@
     </div>
   </section>
   <section class="last-message">
-    <%= link_to conversation.last_message.subject, conversation %>
+    <% if conversation.is_unread?(current_user) %>
+      <%= link_to conversation.last_message.subject, conversation, class: "unread" %>
+    <% else %>
+      <%= link_to conversation.last_message.subject, conversation %>
+    <% end %>
   </section>
 </article>

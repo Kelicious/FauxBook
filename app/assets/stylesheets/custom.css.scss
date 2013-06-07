@@ -35,12 +35,35 @@ img.medium {
   height: 0;
 }
 
+/* Messages */
+
+section.conversations {
+  .unread {
+    font-weight: bold;
+  }
+  .unread:after {
+    font-weight: normal;
+    font-style: italic;
+    content: " *New*"
+  }
+}
+
+/* Sidebar */
+
+.sidebar {
+  
+}
+
+/* Profile page */
+
 div.profile-panel {
   padding-bottom: 0;
   div.navbar {
     background: blue;
   }
 }
+
+/* Wall posts */
 
 div.wall {
   #new_post {
@@ -85,6 +108,8 @@ div.wall {
     }
   }
 }
+
+/* Info Page */
 
 table.basic-info {
   th.info-label {

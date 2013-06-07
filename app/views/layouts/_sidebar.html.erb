@@ -2,6 +2,8 @@
   <% if user_signed_in? %>
     <%= render partial: 'layouts/friend_requests' %>
     <br>
-    <%= render partial: 'layouts/unread_messages' %>
+    <%= render partial: 'layouts/messages' %>
+    <br>
+    <%= render partial: 'layouts/wall' %>
   <% end %>
 </div>
