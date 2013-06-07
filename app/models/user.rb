@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
+  # Mailboxer gem
+  acts_as_messageable
+  
   # User profile basics
   attr_accessible :profile_attributes
   has_one :profile, inverse_of: :user

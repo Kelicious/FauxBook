@@ -31,4 +31,8 @@ FbClone::Application.routes.draw do
   resources :comments do
     resource :like, only: [:create, :destroy]
   end
+
+  resources :conversations do
+    resources :messages
+  end
 end

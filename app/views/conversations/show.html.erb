@@ -1,0 +1,3 @@
+<% user = @conversation.recipients.select { |r| r.id != current_user.id }.first %>
+<h2>Conversation with <%= user.name %></h2>
+
