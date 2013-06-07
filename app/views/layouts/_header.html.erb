@@ -5,7 +5,9 @@
         <% if user_signed_in? %>
           <%= render partial: 'layouts/friend_requests' %>
         <% end %>
-        <input type="text" id="search" value="Search"></input>
+        <form class="navbar-search pull-left" action="/users">
+          <input type="text" name="q" class="search-query" placeholder="Search">
+        </form>
         <ul class="nav pull-right" id="topNav">
           <li><%= link_to "Home", root_path %></li>
           <% if user_signed_in? %>

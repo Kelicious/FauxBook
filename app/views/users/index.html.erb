@@ -6,4 +6,8 @@
   <% end %>
 </h2>
 
-<%= render @users %>
+<% if @users.length > 0  %>
+  <%= render @users %>
+<% else %>
+  No users found
+<% end %>

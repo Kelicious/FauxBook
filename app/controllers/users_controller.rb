@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   def index
     @name = params[:q]
     if @name
-      @users = User.find_by_name(@name)
+      begin
+        @users = User.find_by_name(@name)
+      rescue => e
+        flash[:error] = e.message
+        redirect_to root_url
+      end
     else
       @users = User.all
     end
