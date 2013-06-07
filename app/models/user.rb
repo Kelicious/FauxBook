@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   has_many :friendships
   has_many :friends, through: :friendships,
-  conditions: ['friendships.status', 1]
+  conditions: ['friendships.status = 1']
   has_many :pending_friend_requests, class_name: "Friendship", foreign_key: "friend_id", conditions: { status: 0 }
   has_many :pending_sent_friend_requests, class_name: "Friendship", conditions: { status: 0 }
 
