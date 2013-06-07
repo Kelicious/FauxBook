@@ -1,4 +1,4 @@
-FbClone::Application.routes.draw do
+GrayBook::Application.routes.draw do
   devise_for :users
 
   root to: 'users#show'

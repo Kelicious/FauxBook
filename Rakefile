@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FbClone::Application.load_tasks
+GrayBook::Application.load_tasks

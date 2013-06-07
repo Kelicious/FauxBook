@@ -1,4 +1,4 @@
-FbClone::Application.configure do
+GrayBook::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -37,4 +37,14 @@ FbClone::Application.configure do
 
   # For Devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Paperclip
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'ke_local_fbc',
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET']
+  }
+}
 end

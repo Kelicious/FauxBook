@@ -6,6 +6,7 @@ gem 'devise'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'mailboxer'
 gem 'bootstrap-sass'
 

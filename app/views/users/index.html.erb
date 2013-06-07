@@ -1,5 +1,5 @@
 <h2>
-  <% if @name  %>
+  <% if @name && @name.length > 0 %>
     Search Results for "<%= @name %>"
   <% else %>
     All Users

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @name = params[:q]
-    if @name
+    if @name && @name.length > 0
       begin
         @users = User.find_by_name(@name)
       rescue => e
