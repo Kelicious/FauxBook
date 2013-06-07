@@ -1,0 +1,9 @@
+<% num_unread = current_user.unread_messages_count %>
+<% case num_unread
+   when 0 %>
+<%= link_to "Inbox", conversations_path %>
+<% when 1 %>
+<%= link_to "1 Unread Message", conversations_path %>
+<% else %>
+<%= link_to "#{num_unread} Unread Messages", conversations_path %>
+<% end %>

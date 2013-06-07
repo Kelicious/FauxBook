@@ -48,6 +48,11 @@ p
     self.friends.where(id: another_user.friend_ids)
   end
 
+  def unread_messages_count
+    conversations = self.mailbox.conversations
+    conversations.select { |c| c.is_unread?(self) }.count
+  end
+
   def self.find_by_name(name)
     names = name.split.map(&:capitalize)
     case names.count

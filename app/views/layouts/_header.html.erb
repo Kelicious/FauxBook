@@ -2,9 +2,6 @@
   <div class="navbar-inner">
     <div class="container">
       <nav>
-        <% if user_signed_in? %>
-          <%= render partial: 'layouts/friend_requests' %>
-        <% end %>
         <form class="navbar-search pull-left" action="/users">
           <input type="text" name="q" class="search-query" placeholder="Search">
         </form>
