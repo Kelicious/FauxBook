@@ -1,0 +1,5 @@
+<%= form_tag conversation_messages_path(conversation) do %>
+  <%= text_area_tag(:body, "", :size => "80x6") %>
+  <br>
+  <%= submit_tag "Reply" %>
+<% end %>

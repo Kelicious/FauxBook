@@ -1,0 +1,14 @@
+<article class="message well">
+  <header class="clearfix">
+    <div class="picture">
+      <%= image_tag(message.sender.profile.picture.url(:thumb), class: "thumb") %>
+    </div>
+    <div class="info">
+      <h6><%= link_to message.sender.name, message.sender %></h6>
+      <small><time><%= time_ago_in_words(message.created_at) %> ago</time></small>
+    </div>
+  </header>
+  <section class="body">
+    <%= message.body %>
+  </section>
+</article>

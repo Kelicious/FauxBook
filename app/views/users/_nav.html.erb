@@ -20,6 +20,9 @@
             <%= render partial: 'users/friendship_button', locals: {user: @user} %>
           </li>
         <% end %>
+        <% if @user.has_friend?(current_user) %>
+          <li><%= link_to "Message", new_user_conversation_path(@user) %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

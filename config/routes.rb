@@ -7,11 +7,11 @@ FbClone::Application.routes.draw do
     match 'info' => 'users#info'
     match 'friends' => 'users#friends'
     match 'mutual_friends' => 'users#mutual_friends'
-    
 
     resource :profile, only: [:edit]
     resources :friendships, only: [:create]
     resources :posts, only: [:create, :index]
+    resources :conversations, only: [:new, :create]
   end
 
   resources :profiles, only: [:update] do
@@ -32,7 +32,7 @@ FbClone::Application.routes.draw do
     resource :like, only: [:create, :destroy]
   end
 
-  resources :conversations do
-    resources :messages
+  resources :conversations, only: [:index, :show] do
+    resources :messages, only: [:create]
   end
 end

@@ -1,0 +1,9 @@
+<%= form_tag user_conversations_path(recipient) do %>
+  <%= label_tag :subject %>
+  <%= text_field_tag :subject %>
+  <br>
+  <%= label_tag :body %>
+  <%= text_area_tag(:body, "", :size => "80x6") %>
+  <br>
+  <%= submit_tag "Send" %>
+<% end %>
