@@ -3,7 +3,7 @@ FbClone::Application.routes.draw do
 
   root to: 'users#show'
 
-  resources :users, only: [:show] do
+  resources :users, only: [:index, :show] do
     match 'info' => 'users#info'
     match 'friends' => 'users#friends'
     match 'mutual_friends' => 'users#mutual_friends'

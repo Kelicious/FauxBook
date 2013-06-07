@@ -27,9 +27,7 @@ p
 
   validates :email, uniqueness: true
 
-  def name
-    profile.name
-  end
+  delegate :name, to: :profile
 
   def has_friend?(another_user)
     friend_ids.include?(another_user.id)
@@ -45,5 +43,32 @@ p
 
   def mutual_friends(another_user)
     self.friends.where(id: another_user.friend_ids)
+  end
+
+  def self.find_by_name(name)
+    names = name.split.map(&:capitalize)
+    case names.count
+    when 1
+      find_by_first_name(names.first) + find_by_last_name(names.first)
+    when 2
+      find_by_full_name(names)
+    else
+      raise "Invalid name"
+    end
+  end
+
+  private
+
+  def self.find_by_first_name(name)
+    User.joins(:profile).where(profiles: {first_name: name})
+  end
+
+  def self.find_by_last_name(name)
+    User.joins(:profile).where(profiles: {last_name: name})
+  end
+
+  def self.find_by_full_name(names)
+    fname, lname = names
+    User.joins(:profile).where(profiles: {first_name: fname, last_name: lname})
   end
 end

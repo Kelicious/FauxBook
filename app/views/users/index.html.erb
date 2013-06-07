@@ -1,0 +1,9 @@
+<h2>
+  <% if @name  %>
+    Search Results for "<%= @name %>"
+  <% else %>
+    All Users
+  <% end %>
+</h2>
+
+<%= render @users %>

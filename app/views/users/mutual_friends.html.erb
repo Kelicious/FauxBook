@@ -3,6 +3,6 @@
 <div class="mutual-friends">
   <h2>Mutual Friends with <%= @user.name %></h2>
 
-  <%= render partial: 'user_list',
+  <%= render partial: 'users',
       locals: {users: current_user.mutual_friends(@user)} %>
 </div>
