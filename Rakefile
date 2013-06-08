@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-GrayBook::Application.load_tasks
+Fauxbook::Application.load_tasks
