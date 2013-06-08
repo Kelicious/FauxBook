@@ -67,10 +67,11 @@ Fauxbook::Application.configure do
   
   # Paperclip
   config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_credentials => {
-    :bucket => 'ke_app_academy_fbc',
-    :access_key_id => ENV['S3_KEY'],
-    :secret_access_key => ENV['S3_SECRET']
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'ke_local_fbc',
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET']
+    }
   }
 end
